@@ -1,65 +1,117 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mokaro | Better Coffee at Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f0e8">
+<title>MOKARO — Make mornings yours</title>
+<meta name="description" content="Discover a timeless stovetop coffee ritual with MOKARO.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f8f5ef;color:#29251f}
-header{padding:25px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5ded2}
-.logo{font-size:25px;font-weight:900;letter-spacing:3px}
-nav a{margin-left:25px;color:#29251f;text-decoration:none}
-.hero{padding:90px 8%;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.05;margin-bottom:20px}
-.hero p{font-size:18px;line-height:1.7;color:#71685e;margin-bottom:25px}
-.btn{display:inline-block;background:#29251f;color:white;padding:16px 28px;text-decoration:none;border-radius:4px}
-.product-image{width:100%;height:430px;object-fit:cover;border-radius:8px}
-.section{padding:65px 8%;text-align:center}
-.section h2{font-size:36px;margin-bottom:20px}
-.product{max-width:650px;margin:35px auto;background:white;padding:25px;border-radius:8px}
-.product img{width:100%;height:350px;object-fit:contain}
-.price{font-size:28px;font-weight:bold;margin:15px}
-footer{padding:35px;text-align:center;background:#29251f;color:white}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:45px}.product-image{height:300px}nav a{margin-left:10px;font-size:13px}}
+:root{--ink:#24231f;--muted:#777168;--cream:#f5f0e8;--paper:#fffdf9;--line:#e4ddd1;--accent:#9a623d;--dark:#28251f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.topline{background:var(--dark);color:#f8f3eb;text-align:center;padding:9px 16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(245,240,232,.94)}
+.logo{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:.16em}.nav{display:flex;gap:28px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.cart{border:1px solid var(--ink);padding:11px 15px;font-size:12px;letter-spacing:.08em;background:transparent;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:570px;padding:65px 7%;gap:5%;align-items:center}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:bold}.hero h1{font:clamp(48px,6vw,78px)/.98 Georgia,serif;letter-spacing:-.04em;margin:20px 0}.hero p{max-width:440px;color:var(--muted);line-height:1.8;font-size:16px}.primary{display:inline-block;margin-top:18px;background:var(--dark);color:white;padding:16px 24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;border:0;cursor:pointer}.hero-photo{width:100%;height:455px;object-fit:contain;background:#eee7dc;border-radius:3px}
+.section{padding:75px 7%}.section-head{text-align:center;margin-bottom:38px}.section h2{font:clamp(32px,4vw,48px) Georgia,serif;margin:12px 0}.section-head p{color:var(--muted);line-height:1.7}
+.product-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:6%;max-width:1120px;margin:auto;align-items:start}.gallery-main{width:100%;height:490px;object-fit:contain;background:var(--paper);border:1px solid var(--line);padding:18px}.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}.thumb{height:105px;border:1px solid var(--line);background:var(--paper);padding:5px;cursor:pointer}.thumb img{width:100%;height:100%;object-fit:contain}.details{padding:12px 0}.details h3{font:40px Georgia,serif;margin:10px 0}.sub{color:var(--muted);line-height:1.7}.price{font-size:18px;font-weight:bold;margin:24px 0 8px}.notice{font-size:12px;color:var(--muted);line-height:1.6}
+label{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;margin:23px 0 9px}.sizes{display:flex;gap:10px}.size-btn{padding:13px 18px;border:1px solid var(--line);background:var(--paper);cursor:pointer}.size-btn.active{border:1px solid var(--ink);background:#e9dfd1}.quantity{display:flex;align-items:center;gap:14px;margin:20px 0}.quantity button{width:35px;height:35px;border:1px solid var(--line);background:var(--paper);font-size:18px;cursor:pointer}.quantity span{min-width:16px;text-align:center}.add{width:100%;padding:17px;background:var(--dark);color:white;border:0;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}.add:disabled{opacity:.55;cursor:not-allowed}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1120px;margin:auto}.info{padding:28px;background:var(--paper);border:1px solid var(--line)}.info h4{font:22px Georgia,serif;margin:0 0 10px}.info p{color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+footer{background:var(--dark);color:#f8f3eb;padding:42px 7%;display:flex;justify-content:space-between;gap:25px;align-items:center}.footnote{font-size:12px;color:#c9c0b4;line-height:1.6;max-width:470px}
+.cart-panel{position:fixed;right:18px;bottom:18px;background:var(--paper);border:1px solid var(--line);box-shadow:0 10px 40px #0002;padding:18px;max-width:330px;width:calc(100% - 36px);z-index:5;display:none}.cart-panel.show{display:block}.cart-panel h4{font:23px Georgia,serif;margin:0 0 10px}.cart-panel p{font-size:13px;color:var(--muted);line-height:1.6}.close{float:right;border:0;background:none;font-size:20px;cursor:pointer}
+@media(max-width:760px){header{padding:0 5%;height:68px}.nav{gap:12px;font-size:10px}.logo{font-size:22px}.hero{grid-template-columns:1fr;padding:48px 6%;gap:28px}.hero-photo{height:330px}.section{padding:55px 6%}.product-layout{grid-template-columns:1fr;gap:25px}.gallery-main{height:370px}.thumb{height:78px}.info-grid{grid-template-columns:1fr}footer{display:block}footer .footnote{margin-top:15px}}
 </style>
 </head>
 <body>
+<div class="topline">A slower, better coffee ritual</div>
 <header>
-<div class="logo">Mokaro.</div>
-<nav><a href="#home">Home</a><a href="#product">Shop</a><a href="#about">About</a></nav>
+<a class="logo" href="#home">MOKARO</a>
+<nav class="nav"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Our approach</a></nav>
+<button class="cart" id="cartButton" type="button">BAG (<span id="cartCount">0</span>)</button>
 </header>
 
 <main>
 <section class="hero" id="home">
 <div>
-<p>THE ART OF BETTER COFFEE</p>
-<h1>Your morning.<br>Made better.</h1>
-<p>Discover a simple, timeless way to enjoy rich stovetop coffee from the comfort of home.</p>
-<a class="btn" href="#product">DISCOVER THE MOKA POT</a>
+<div class="eyebrow">The everyday coffee ritual</div>
+<h1>Make mornings<br>matter.</h1>
+<p>A timeless stovetop coffee maker for slow mornings, thoughtful routines, and coffee made at home.</p>
+<a class="primary" href="#shop">Explore the moka pot</a>
 </div>
-<img class="product-image" src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=1000" alt="Coffee being prepared">
+<img class="hero-photo" src="https://s.alicdn.com/@sc04/kf/Hea85fbb3009344e38fdda1554ae28d0cp.png?avif=close&amp;webp=close" alt="MOKARO stovetop moka pot">
 </section>
 
-<section class="section" id="product">
-<h2>Meet your new coffee ritual.</h2>
-<p>Simple brewing. Timeless design. Coffee worth waking up for.</p>
-<div class="product">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900" alt="Coffee setup">
-<h2>Classic Moka Pot</h2>
-<p>A stovetop coffee maker designed for a richer home coffee experience.</p>
-<div class="price">Coming soon</div>
-<p>Available in 3-cup and 6-cup sizes.</p>
+<section class="section" id="shop">
+<div class="section-head">
+<div class="eyebrow">The MOKARO edit</div>
+<h2>The classic moka pot</h2>
+<p>Choose the size that suits your coffee routine.</p>
+</div>
+<div class="product-layout">
+<div>
+<img class="gallery-main" id="mainImage" src="https://s.alicdn.com/@sc04/kf/Hea85fbb3009344e38fdda1554ae28d0cp.png?avif=close&amp;webp=close" alt="Moka pot product view">
+<div class="thumbs">
+<button class="thumb" type="button" data-image="https://s.alicdn.com/@sc04/kf/Hea85fbb3009344e38fdda1554ae28d0cp.png?avif=close&amp;webp=close" aria-label="View product image 1"><img src="https://s.alicdn.com/@sc04/kf/Hea85fbb3009344e38fdda1554ae28d0cp.png?avif=close&amp;webp=close" alt=""></button>
+<button class="thumb" type="button" data-image="https://s.alicdn.com/@sc04/kf/Ha7438aac8eb64c76bd3f76d0ae6b4c96r.png?avif=close&amp;webp=close" aria-label="View product image 2"><img src="https://s.alicdn.com/@sc04/kf/Ha7438aac8eb64c76bd3f76d0ae6b4c96r.png?avif=close&amp;webp=close" alt=""></button>
+<button class="thumb" type="button" data-image="https://s.alicdn.com/@sc04/kf/H3baa83a31e1b4517a2cb2f88af7f02fci.png?avif=close&amp;webp=close" aria-label="View product image 3"><img src="https://s.alicdn.com/@sc04/kf/H3baa83a31e1b4517a2cb2f88af7f02fci.png?avif=close&amp;webp=close" alt=""></button>
+<button class="thumb" type="button" data-image="https://s.alicdn.com/@sc04/kf/Haca61ebe178a4bcbbb6034582c34385dy.png?avif=close&amp;webp=close" aria-label="View product image 4"><img src="https://s.alicdn.com/@sc04/kf/Haca61ebe178a4bcbbb6034582c34385dy.png?avif=close&amp;webp=close" alt=""></button>
+</div>
+</div>
+<div class="details">
+<div class="eyebrow">Stovetop coffee maker</div>
+<h3>Classic Moka Pot</h3>
+<p class="sub">A simple, familiar stovetop brewing style in two size options. Check the supplier's specifications and compatibility before publishing final product claims.</p>
+<div class="price">Price coming soon</div>
+<p class="notice">Final price depends on verified supplier cost, shipping, taxes, and payment fees. This preview does not accept payments.</p>
+<label>Choose your size</label>
+<div class="sizes">
+<button class="size-btn active" type="button" data-size="3-Cup">3-Cup</button>
+<button class="size-btn" type="button" data-size="6-Cup">6-Cup</button>
+</div>
+<label>Quantity</label>
+<div class="quantity"><button type="button" id="minus" aria-label="Decrease quantity">−</button><span id="qty">1</span><button type="button" id="plus" aria-label="Increase quantity">+</button></div>
+<button class="add" id="addToBag" type="button">Add to bag preview</button>
+<p class="notice" style="margin-top:13px">Preview only — no order is placed and no payment is collected.</p>
+</div>
 </div>
 </section>
 
-<section class="section" id="about">
-<h2>Make mornings matter.</h2>
-<p>Mokaro is about slowing down and enjoying the little things.</p>
+<section class="section" id="story">
+<div class="section-head"><div class="eyebrow">The MOKARO approach</div><h2>Good coffee. Simple moments.</h2><p>We believe the best daily rituals don't need to be complicated.</p></div>
+<div class="info-grid">
+<div class="info"><h4>A familiar ritual</h4><p>A stovetop coffee maker brings a hands-on moment to your morning routine.</p></div>
+<div class="info"><h4>Two size options</h4><p>Choose between the listed 3-cup and 6-cup versions.</p></div>
+<div class="info"><h4>Details matter</h4><p>We're checking product specifications, supplier terms, and delivery details before launch.</p></div>
+</div>
 </section>
 </main>
-<footer>Mokaro. · Better mornings start here.</footer>
+<footer><div class="logo">MOKARO</div><div class="footnote">An independent store concept. Product photos are linked from the supplier's image host; confirm commercial image-use permission before launch. Product details, pricing, shipping, returns, and checkout must be verified before accepting orders.</div></footer>
+
+<aside class="cart-panel" id="cartPanel" aria-live="polite">
+<button class="close" id="closeCart" aria-label="Close bag">×</button>
+<h4>Your bag preview</h4>
+<p id="cartText">Your bag is empty.</p>
+<p>This is a design preview only. Checkout is not enabled.</p>
+</aside>
+
+<script>
+const images=[...document.querySelectorAll('.thumb')];
+const main=document.getElementById('mainImage');
+images.forEach(btn=>btn.addEventListener('click',()=>{main.src=btn.dataset.image;}));
+let size='3-Cup',qty=1,count=0;
+document.querySelectorAll('.size-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');size=btn.dataset.size;
+}));
+document.getElementById('minus').addEventListener('click',()=>{qty=Math.max(1,qty-1);document.getElementById('qty').textContent=qty;});
+document.getElementById('plus').addEventListener('click',()=>{qty=Math.min(10,qty+1);document.getElementById('qty').textContent=qty;});
+document.getElementById('addToBag').addEventListener('click',()=>{
+ count+=qty;document.getElementById('cartCount').textContent=count;
+ document.getElementById('cartText').textContent=`${count} item(s) in your preview bag. Latest selection: ${qty} × ${size}.`;
+ document.getElementById('cartPanel').classList.add('show');
+});
+document.getElementById('cartButton').addEventListener('click',()=>document.getElementById('cartPanel').classList.toggle('show'));
+document.getElementById('closeCart').addEventListener('click',()=>document.getElementById('cartPanel').classList.remove('show'));
+</script>
 </body>
 </html>
-
